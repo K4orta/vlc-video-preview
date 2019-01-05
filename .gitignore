@@ -1,3 +1,6 @@
 node_modules
 clips/*.mp4
 input.mp4
+snapshots/**/*.png
+snapshots/**/*.mp4
+snapshots/**/*.txt

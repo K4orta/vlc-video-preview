@@ -1,10 +1,10 @@
 const { spawn } = require('child_process')
 const { sep } = require('path')
 
-function makeImages ({ filepath, start, duration, segment, workDir }) {
+function makeImages ({ input, start, duration, segment, workDir }) {
   return new Promise(resolve => {
     const proc = spawn('vlc', [
-        filepath,
+        input,
         '--rate=1',
         '--video-filter=scene',
         `--start-time=${start}`,
@@ -16,7 +16,7 @@ function makeImages ({ filepath, start, duration, segment, workDir }) {
         '--scene-height=480',
         'vlc://quit'
       ])
-    
+      
       proc.on('close', resolve)
   })
 }

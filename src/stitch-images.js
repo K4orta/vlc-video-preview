@@ -1,4 +1,5 @@
 const { spawn } = require('child_process')
+const { sep} = require('path')
 
 function stitchImages(segment, workDir) {
     return new Promise(resolve => {
@@ -8,14 +9,14 @@ function stitchImages(segment, workDir) {
             '-f',
             'image2',
             '-i',
-            `${workDir}/${segment}/snap%05d.png`,
+            `${workDir}${sep}${segment}${sep}snap%05d.png`,
             '-vcodec',
             'libx264',
             '-crf',
             '22',
             '-pix_fmt',
             'yuv420p',
-            `${workDir}/clip${segment}.mp4`
+            `${workDir}${sep}clip${segment}.mp4`
         ])
         ffmpeg.on('close', resolve)
         ffmpeg.stderr.on('data', data => console.log(String(data)))
