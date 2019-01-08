@@ -45,7 +45,7 @@ async function makePreview(input, hash) {
 
     return Promise.all(jobs).then(async () => {
         console.log('All jobs done')
-        await mergeClips(range.map(i => `${workDir}${sep}clip${i}.mp4`), workDir, destDir)
+        await mergeClips(range.map(i => `${workDir}${sep}clip${i}.mp4`), workDir, destDir, hash)
         cleanup(workDir)
     })
 }

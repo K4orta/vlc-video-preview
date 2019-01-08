@@ -9,7 +9,7 @@ function makeManifest(clips, workDir) {
     })
 }
 
-async function mergeClips(clips, workDir, destDir) {
+async function mergeClips(clips, workDir, destDir, mergedName) {
     await makeManifest(clips, workDir)
   return new Promise(resolve => {
     const proc = spawn('ffmpeg', [
@@ -22,7 +22,7 @@ async function mergeClips(clips, workDir, destDir) {
         `${workDir}${sep}manifest.txt`,
         '-c',
         'copy',
-        `${destDir}${sep}output.mp4`
+        `${destDir}${sep}${mergedName}.mp4`
     ])
     proc.on('close', resolve)
     proc.stderr.on('data', data => console.log(String(data)))
