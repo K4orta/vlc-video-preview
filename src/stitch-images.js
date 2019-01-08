@@ -13,7 +13,7 @@ function stitchImages(segment, workDir) {
             '-vcodec',
             'libx264',
             '-crf',
-            '22',
+            '25',
             '-pix_fmt',
             'yuv420p',
             `${workDir}${sep}clip${segment}.mp4`

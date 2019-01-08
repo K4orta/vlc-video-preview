@@ -9,7 +9,7 @@ const cleanup = require('./src/cleanup')
 const { sep } = require('path')
 
 async function makePreview(input, hash) {
-    const segments = 6
+    const segments = 8
     const delay = 20
     const length = await probe(input)
     const segmentLength = length / segments - delay;
