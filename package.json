@@ -1,11 +1,14 @@
 {
-  "name": "thumb-make",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vlc-video-preview",
+  "version": "0.1.0",
+  "description": "Takes an input video and then produces a preview file consisting of X second chunks from various places in the input file.",
   "main": "index.js",
+  "repository": "k4orta/vlc-video-preview",
+  "keywords": ["vlc", "video", "preview"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Eric Wong",
+  "bin": "cli.js",
+  "license": "MIT"
 }
