@@ -1,6 +1,6 @@
 {
   "name": "vlc-video-preview",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Takes an input video and then produces a preview file consisting of X second chunks from various places in the input file.",
   "main": "index.js",
   "repository": "k4orta/vlc-video-preview",
