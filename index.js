@@ -8,7 +8,7 @@ const mergeClips = require('./src/merge-clips')
 const cleanup = require('./src/cleanup')
 const { sep } = require('path')
 
-async function makePreview(input, hash) {
+async function makePreview({input, hash, output}) {
     const segments = 8
     const delay = 20
     const length = await probe(input)
@@ -17,7 +17,7 @@ async function makePreview(input, hash) {
     const range = []
     const snapDir = 'snapshots'
     const workDir = `${__dirname}${sep}${snapDir}${sep}${hash}`
-    const destDir = 'clips'
+    const destDir = output || 'clips'
 
     if (length < delay) {
         return

@@ -4,4 +4,8 @@
 
 const makePreview = require('./');
 
-makePreview(process.argv[2], process.argv[3])
+makePreview({
+    input: process.argv[2], 
+    hash: process.argv[3],
+    output: process.argv[4]
+})
