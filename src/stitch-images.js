@@ -17,7 +17,7 @@ function stitchImages(segment, workDir) {
             '-pix_fmt',
             'yuv420p',
             '-vf',
-            '"pad=ceil(iw/2)*2:ceil(ih/2)*2"',
+            'pad=ceil(iw/2)*2:ceil(ih/2)*2',
             `${workDir}${sep}clip${segment}.mp4`
         ])
         ffmpeg.on('close', resolve)
