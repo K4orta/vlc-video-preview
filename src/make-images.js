@@ -14,7 +14,10 @@ function makeImages ({ input, start, duration, segment, workDir }) {
         '--scene-prefix=snap',
         `--scene-path=${workDir}${sep}${segment}`,
         '--scene-height=480',
+        '--fps-fps=24',
         '--no-audio',
+        '--intf=dummy',
+        '--video-x=1000',
         'vlc://quit'
       ])
       
