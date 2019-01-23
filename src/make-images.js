@@ -18,6 +18,7 @@ function makeImages ({ input, start, duration, segment, workDir }) {
         '--no-audio',
         '--intf=dummy',
         '--video-x=1000',
+        '--quiet',
         'vlc://quit'
       ])
       
